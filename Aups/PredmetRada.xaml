@@ -1,0 +1,47 @@
+﻿<Page x:Class="Aups.PredmetRada"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Aups"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="700"
+      Title="PredmetRada"
+      Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    <Page.Resources>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="myDataGrid" IsReadOnly="True" ColumnWidth="*" Grid.Column="0" Height="356" HeadersVisibility="All" Margin="28,34,223,10" Grid.ColumnSpan="3" VerticalAlignment="Center">
+            <DataGrid.Background>
+                <ImageBrush ImageSource="Images/aupsPic03.jpg" />
+            </DataGrid.Background>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <StackPanel></StackPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <TextBox x:Name="txtRok" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="254,82,-136,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" />
+        <DatePicker x:Name="dtpPocetak" Grid.Column="2" HorizontalAlignment="Left" Margin="254,110,-163,0" VerticalAlignment="Top" Width="142" />
+        <Label x:Name="lblRok" Content="Rok:" Grid.Column="2" Foreground="White" HorizontalAlignment="Left" Margin="134,84,0,0" VerticalAlignment="Top" Height="27" Width="89"/>
+        <Label x:Name="lblDatumPocetak" Content="Datum početka" Grid.Column="2" Foreground="White" HorizontalAlignment="Left" Margin="134,111,-13,0" VerticalAlignment="Top" RenderTransformOrigin="0.531,0.038" Width="112"/>
+        <Label x:Name="lblDatumKraj" Content="Datum završetka:" Foreground="White" HorizontalAlignment="Left" Margin="134,139,-15,0" VerticalAlignment="Top" RenderTransformOrigin="0.49,-0.381" Width="114" Grid.Column="2"/>
+        <DatePicker x:Name="dtpKraj" Grid.Column="2" HorizontalAlignment="Left" Margin="254,140,-163,0" VerticalAlignment="Top" Width="142" />
+        <GroupBox x:Name="groupBox" Header="Unos podataka" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left" Margin="134,10,-263,0" VerticalAlignment="Top" Height="281" Width="362" Grid.Column="2">
+            <StackPanel Orientation="Horizontal" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="4,0,-110,2">
+                <Button x:Name="btnDodaj" Content="Dodaj" MinWidth="80" Margin="5,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False" Click="DodajBtnClick" />
+                <Button x:Name="btnIzmeni" Content="Izmeni" MinWidth="80" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" IsEnabled="False" Click="IzmeniBtnClick" Width="77" />
+                <Button x:Name="btnObrisi" Content="Obrisi" MinWidth="80" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" IsEnabled="False" Click="ObrisiBtnClick" Width="76" />
+            </StackPanel>
+        </GroupBox>
+        <TextBox x:Name="txtKlijent" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="254,54,-136,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" RenderTransformOrigin="0.522,-1.09" x:FieldModifier="public" />
+        <Label x:Name="label4" Content="Klijent:" Grid.Column="2" Foreground="White" HorizontalAlignment="Left" Margin="134,54,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.49,2.558" Height="23"/>
+        <Button x:Name="btnPlan" Content="Plan" Grid.Column="2" Background="Gray" Foreground="White" HorizontalAlignment="Left" Margin="254,191,-136,0" VerticalAlignment="Top" Width="115" Height="37" Click="btnPlanClick"/>
+        <TextBlock x:Name="lblCreatePac" Text="Kreiraj novi" TextDecorations="Underline" FontWeight="Bold" Background="AntiqueWhite" Foreground="Blue" HorizontalAlignment="Left" Margin="3,10,0,0" PreviewMouseLeftButtonUp="lblKreirajClick" VerticalAlignment="Top" FontSize="14"/>
+    </Grid>
+</Page>
